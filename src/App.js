@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { Card } from './Card';
+
+const Datas = [
+    { name: "aa", picture: "pic1", insta: "in1" },
+    { name: "bb", picture: "pci2", insta: "in2" },
+    { name: "cc", picture: "pic3", insta: "in3" },
+    { name: "dd", picture: "pic4", insta: "in4" }
+]
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div style={{ display: "flex", flexDrection: "row" }}>
+            {Datas.map((data) => {
+                return (
+                    <Card name={data.name} picture={data.picture} insta={data.insta} />
+                )
+            })}
+        </div>
+    );
 }
 
 export default App;
